@@ -48,32 +48,27 @@ def Factor():
         if y == 0:
             print(poss_factors[x-1])
 def GCF():
-    number1=int(input("type number 1 here:  "))
-    number2=int(input("type number 2 here:  "))
-    poss_factors1 = list(range(1,number1+1))
-    poss_factors2 = list(range(1,number2+1))
-    a=0
-    if len(poss_factors1) > len(poss_factors2):
-        for i in poss_factors1:
-            x=(number1%poss_factors1[a])
-            y=(number2%poss_factors2[a])
-            if x == 0 and y == 0:
-                common_fact=[poss_factors2[a], poss_factors1[a]]
-                print(common_fact[a])
-            a=a+1
-    else:
-        for i in poss_factors2:
-            x=(number1%poss_factors1[a])
-            y=(number2%poss_factors2[a])
-            if x == 0 and y == 0:
-                common_fact=[poss_factors2[a-1], poss_factors1[a-1]]
-                print(common_fact[a])   
-            a=a+1         
+    num1=int(input("enter number 1 here: "))
+    num2=int(input("enter number 2 here: "))
+    less=1
+    com_fact=[]
+    if num1 > num2:
+        for i in range(num1):
+            b=(num1%less)
+            a=(num2%less)
+            less=less+1
+            if a == 0 and b == 0:
+                com_fact.append(less-1)
+    elif num1 < num2:
+        for i in range(num2):
+            b=(num1%less)
+            a=(num2%less)
+            less=less+1
+            if a ==0 and b ==0:
+                com_fact.append(less-1)
+    print(com_fact[-1])
+tip_value()
+odd_or_even()
+Factor()
+wordcount()
 GCF()
-""" for i in poss_factors:
-y=(number%poss_factors[x])
-x=x+1
-if y == 0:
-print(y)
-if y == 0:
-print(poss_factors[x-1]) """
